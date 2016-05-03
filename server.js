@@ -11,10 +11,6 @@ const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/index.html'))
-})
-
 if (process.env.NODE_ENV !== 'production') {
   const compiler = webpack(config)
   const devServer = new WebpackDevServer(compiler, {
@@ -31,5 +27,9 @@ if (process.env.NODE_ENV !== 'production') {
 
   app.use('/assets', proxy(url.parse('http://localhost:8081/assets')))
 }
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/index.html'))
+})
 
 module.exports = app
