@@ -11,10 +11,20 @@ const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')))
 
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/index.html'))
+})
+
 if (process.env.NODE_ENV !== 'production') {
   const compiler = webpack(config)
   const devServer = new WebpackDevServer(compiler, {
+    contentBase: __dirname,
+    hot: true,
+    quiet: false,
+    noInfo: false,
+    publicPath: '/assets/',
 
+    stats: { colors: true }
   })
 
   devServer.listen(8081)
