@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RSS-Dev/live-html.git"
+    "url": "git+https://github.com/epicsharp/react-boilerplate.git"
   },
   "author": "Caleb Sharp",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RSS-Dev/live-html/issues"
+    "url": "https://github.com/epicsharp/react-boilerplate/issues"
   },
-  "homepage": "https://github.com/RSS-Dev/live-html#readme",
+  "homepage": "https://github.com/epicsharp/react-boilerplate#readme",
   "devDependencies": {
     "babel-core": "^6.8.0",
     "babel-eslint": "^6.0.4",
