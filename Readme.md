@@ -1,4 +1,6 @@
 # react-boilerplate
+[![Build Status](https://travis-ci.org/epicsharp/react-boilerplate.svg?branch=master)](https://travis-ci.org/epicsharp/react-boilerplate)
+
 A boilerplate for react to get you up and running as quickly as possible.
 
 ## Getting Started
