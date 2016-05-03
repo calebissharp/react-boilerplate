@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
