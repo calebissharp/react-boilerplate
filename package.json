@@ -4,7 +4,9 @@
   "description": "An online editor for testing out ideas that you may have.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "build": "webpack",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
