@@ -1,0 +1,19 @@
+{
+  "name": "live-html",
+  "version": "1.0.0",
+  "description": "An online editor for testing out ideas that you may have.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RSS-Dev/live-html.git"
+  },
+  "author": "Caleb Sharp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RSS-Dev/live-html/issues"
+  },
+  "homepage": "https://github.com/RSS-Dev/live-html#readme"
+}
