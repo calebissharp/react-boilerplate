@@ -1,8 +1,11 @@
-# live-html
-An online editor for testing out ideas that you may have.
+# react-boilerplate
+An boilerplate for react to get you up and running as quickly as possible.
 
 ## Getting Started
-Follow these instructions to get live-html running on your local machine.
+Follow these instructions to get it running on your local machine.
+
+* Clone or fork this repo
+
 * Install the dependencies from npm
 ```
 npm install
@@ -19,7 +22,7 @@ You're all set!
 
 The MIT License (MIT)
 
-Copyright (c) 2016 RSS Development 
+Copyright (c) 2016 RSS Development
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
