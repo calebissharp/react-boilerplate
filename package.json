@@ -8,10 +8,10 @@
     "npm": "3.8.6"
   },
   "scripts": {
-    "dev": "nodemon . --ignore src/ --ignore public/",
+    "dev": "webpack-dev-server --hot --inline --content-base public/",
     "build": "webpack",
     "postinstall": "npm run build",
-    "start": "node ."
+    "start": "npm run dev"
   },
   "repository": {
     "type": "git",
