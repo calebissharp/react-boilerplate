@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
-import createStore from './createStore'
+import configureStore from './configureStore'
 import App from './components/App'
 
-const store = createStore()
+const store = configureStore()
 
 render(
   <App />,
