@@ -1,10 +1,11 @@
 import React from 'react'
 import { render } from 'react-dom'
 import createStore from './createStore'
+import App from './components/App'
 
 const store = createStore()
 
 render(
-  <h1>Hello from React</h1>,
+  <App />,
   document.getElementById('react')
 )
