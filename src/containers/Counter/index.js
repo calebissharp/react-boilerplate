@@ -3,11 +3,13 @@ import { connect } from 'react-redux'
 
 import { incrementCounter, decrementCounter } from '../../actions/counter'
 
+import {} from './app.css'
+
 let Counter = ({ counter, onIncrementCounter, onDecrementCounter }) => (
-  <div>
-    <h2>{counter.toString()}</h2>
-    <button onClick={onIncrementCounter}>+</button>
-    <button onClick={onDecrementCounter}>-</button>
+  <div className="counter">
+    <h2 className="counter__number">{counter.toString()}</h2>
+    <button onClick={onIncrementCounter} className="counter__button">+</button>
+    <button onClick={onDecrementCounter} className="counter__button">-</button>
   </div>
 )
 
