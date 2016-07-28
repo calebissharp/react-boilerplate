@@ -7,7 +7,7 @@ import {} from './app.css'
 
 let Counter = ({ counter, onIncrementCounter, onDecrementCounter }) => (
   <div className="counter">
-    <h2 className="counter__number">{counter.toString()}</h2>
+    <h2 className="counter__number">{counter}</h2>
     <button onClick={onIncrementCounter} className="counter__button">+</button>
     <button onClick={onDecrementCounter} className="counter__button">-</button>
   </div>
