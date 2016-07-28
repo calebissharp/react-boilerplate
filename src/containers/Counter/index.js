@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { incrementCounter, decrementCounter } from '../../actions/counter'
 
-import {} from './app.css'
+import {} from './app.scss'
 
 let Counter = ({ counter, onIncrementCounter, onDecrementCounter }) => (
   <div className="counter">
