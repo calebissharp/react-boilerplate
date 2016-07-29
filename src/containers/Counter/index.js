@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { incrementCounter, decrementCounter, incrementCounterAsync } from '../../actions/counter'
 
-import {} from './app.scss'
+import {} from './counter.scss'
 
 let Counter = ({ counter, onIncrementCounter, onDecrementCounter, onIncrementCounterAsync }) => (
   <div className="counter">
