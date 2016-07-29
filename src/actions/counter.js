@@ -14,6 +14,6 @@ export const incrementCounterAsync = () => {
   return (dispatch, getState) => {
     setTimeout(() => {
       dispatch(incrementCounter())
-    })
+    }, 1000)
   }
 }
