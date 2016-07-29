@@ -11,6 +11,11 @@
   height: 50px;
 }
 
+.counter__button--async {
+  border-radius: 5px;
+  width: auto;
+}
+
 .counter__button:hover {
   background: gray;
   cursor: pointer;

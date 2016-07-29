@@ -10,7 +10,7 @@ let Counter = ({ counter, onIncrementCounter, onDecrementCounter, onIncrementCou
     <h2 className="counter__number">{counter}</h2>
     <button onClick={onIncrementCounter} className="counter__button">+</button>
     <button onClick={onDecrementCounter} className="counter__button">-</button>
-    <button onClick={onIncrementCounterAsync} className="counter__button">async</button>
+    <button onClick={onIncrementCounterAsync} className="counter__button counter__button--async">async</button>
   </div>
 )
 
