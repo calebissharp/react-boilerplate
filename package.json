@@ -11,7 +11,9 @@
     "dev": "webpack-dev-server --hot --inline --content-base public/",
     "build": "webpack",
     "postinstall": "npm run build",
-    "start": "npm run dev"
+    "prod": "node server.js",
+    "prestart": "env=PRODUCTION npm run build",
+    "start": "npm run prod"
   },
   "repository": {
     "type": "git",
