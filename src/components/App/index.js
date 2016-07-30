@@ -6,7 +6,11 @@ import DevTools from '../../containers/DevTools'
 const App = () => (
   <div>
     <Counter />
-    <DevTools />
+    {
+      !process.env.PRODUCTION
+      ? <DevTools />
+      : <div></div>
+    }
   </div>
 )
 
