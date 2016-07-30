@@ -7,6 +7,7 @@ import { createDevTools } from 'redux-devtools'
 import DiffMonitor from 'redux-devtools-diff-monitor'
 import Dispatch from 'redux-devtools-dispatch'
 import DockMonitor from 'redux-devtools-dock-monitor'
+import Inspector from 'redux-devtools-inspector'
 
 // createDevTools takes a monitor and produces a DevTools component
 const DevTools = createDevTools(
@@ -20,6 +21,7 @@ const DevTools = createDevTools(
     changeMonitorKey='ctrl-alt-c'>
     <Dispatch />
     <DiffMonitor />
+    <Inspector />
   </DockMonitor>
 )
 
