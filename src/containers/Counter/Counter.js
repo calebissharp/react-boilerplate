@@ -5,14 +5,29 @@ import { incrementCounter, decrementCounter, incrementCounterAsync } from '../..
 
 import {} from './counter.scss'
 
-let Counter = ({ counter, onIncrementCounter, onDecrementCounter, onIncrementCounterAsync }) => (
-  <div className="counter">
-    <h2 className="counter__number">{counter}</h2>
-    <button onClick={onIncrementCounter} className="counter__button">+</button>
-    <button onClick={onDecrementCounter} className="counter__button">-</button>
-    <button onClick={onIncrementCounterAsync} className="counter__button counter__button--async">async</button>
-  </div>
-)
+class Counter {
+  render() {
+    return (
+      <div className="counter">
+        <h2 className="counter__number">{this.props.counter}</h2>
+        <button onClick={this.props.onIncrementCounter}
+          className="counter__button">
+          +
+        </button>
+
+        <button onClick={this.props.onDecrementCounter}
+          className="counter__button">
+          -
+        </button>
+
+        <button onClick={this.props.onIncrementCounterAsync}
+          className="counter__button counter__button--async">
+          async
+        </button>
+      </div>
+    )
+  }
+}
 
 Counter.propTypes = {
   counter: PropTypes.number.isRequired,
