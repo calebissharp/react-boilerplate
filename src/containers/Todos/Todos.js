@@ -6,6 +6,10 @@ import { fetchTodos } from '../../actions/todos'
 import TodoList from '../../components/TodoList'
 
 class Todos extends Component {
+  componentDidMount () {
+    this.props.fetchTodos()
+  }
+
   render () {
     return (
       <div>
