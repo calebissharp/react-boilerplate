@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Todos from '../Todos'
+import Todos from '../../containers/Todos'
 
 import Counter from '../../containers/Counter'
 import DevTools from '../../containers/DevTools'
