@@ -19,9 +19,9 @@ const DevTools = createDevTools(
     changePositionKey='ctrl-q'
     defaultIsVisible
     changeMonitorKey='ctrl-alt-c'>
-    <Dispatch />
-    <DiffMonitor />
     <Inspector />
+    <DiffMonitor />
+    <Dispatch />
   </DockMonitor>
 )
 
