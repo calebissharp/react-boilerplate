@@ -7,9 +7,7 @@ import DevTools from '../containers/DevTools'
 const logger = createLogger()
 export default (initialState = {}) => {
   const enhancer = compose(
-    // Middleware you want to use in development:
     applyMiddleware(thunk, logger),
-    // Required! Enable Redux DevTools with the monitors you chose
     DevTools.instrument()
   )
 
