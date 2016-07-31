@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 
 import Spinner from '../Spinner'
+import Todo from '../Todo'
 
 const TodoList = ({ todos, isFetching }) => {
   if (isFetching) {
@@ -9,13 +10,13 @@ const TodoList = ({ todos, isFetching }) => {
     )
   } else {
     return (
-      <ul>
+      <div>
       {todos.map(todo => {
         return (
-          <li key={todo.id}>{todo.title}</li>
+          <Todo {...todo} key={todo.id} />
         )
       })}
-      </ul>
+      </div>
     )
   }
 }
