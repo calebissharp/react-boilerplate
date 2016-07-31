@@ -1,12 +1,12 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 
 import { incrementCounter, decrementCounter, incrementCounterAsync } from '../../actions/counter'
 
 import {} from './counter.scss'
 
-class Counter {
-  render() {
+class Counter extends Component {
+  render () {
     return (
       <div className="counter">
         <h2 className="counter__number">{this.props.counter}</h2>
