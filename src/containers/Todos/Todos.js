@@ -14,7 +14,7 @@ class Todos extends Component {
     return (
       <div>
         <h1>Todos</h1>
-        <TodoList todos={this.props.todos} />
+        <TodoList todos={this.props.todos} isFetching={this.props.isFetching} />
       </div>
     )
   }
@@ -22,12 +22,14 @@ class Todos extends Component {
 
 Todos.propTypes = {
   todos: PropTypes.array.isRequired,
+  isFetching: PropTypes.bool.isRequired,
   fetchTodos: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
   return {
-    todos: state.todos.items
+    todos: state.todos.items,
+    isFetching: state.todos.isFetching
   }
 }
 
