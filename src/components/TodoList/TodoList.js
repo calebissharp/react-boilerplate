@@ -3,7 +3,9 @@ import React, { PropTypes } from 'react'
 const TodoList = ({ todos }) => (
   <ul>
     {todos.map(todo => {
-      (<li>{todo.title}</li>)
+      return (
+        <li key={todo.id}>{todo.title}</li>
+      )
     })}
   </ul>
 )
