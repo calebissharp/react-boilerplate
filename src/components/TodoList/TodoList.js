@@ -1,17 +1,28 @@
 import React, { PropTypes } from 'react'
 
-const TodoList = ({ todos }) => (
-  <ul>
-    {todos.map(todo => {
-      return (
-        <li key={todo.id}>{todo.title}</li>
-      )
-    })}
-  </ul>
-)
+import Spinner from '../Spinner'
+
+const TodoList = ({ todos, isFetching }) => {
+  if (isFetching) {
+    return (
+      <Spinner text='Loading' />
+    )
+  } else {
+    return (
+      <ul>
+      {todos.map(todo => {
+        return (
+          <li key={todo.id}>{todo.title}</li>
+        )
+      })}
+      </ul>
+    )
+  }
+}
 
 TodoList.propTypes = {
-  todos: PropTypes.array.isRequired
+  todos: PropTypes.array.isRequired,
+  isFetching: PropTypes.bool.isRequired
 }
 
 export default TodoList
