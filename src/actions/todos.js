@@ -33,8 +33,10 @@ export const receiveTodos = (json) => ({
 export const fetchTodos = () => {
   return dispatch => {
     dispatch(requestTodos())
-    return fetch('http://localhost:8080/todos.json')
+    setTimeout(() => {
+      return fetch('http://localhost:8080/todos.json')
       .then(res => res.json())
       .then(json => dispatch(receiveTodos(json)))
+    }, 1000)
   }
 }
