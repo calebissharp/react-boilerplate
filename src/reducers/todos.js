@@ -7,7 +7,7 @@ const todos = (state = {
   switch (action.type) {
     case REQUEST_TODOS:
       return Object.assign({}, state, {
-        isFetching: false
+        isFetching: true
       })
     case RECEIVE_TODOS:
       return Object.assign({}, state, {
