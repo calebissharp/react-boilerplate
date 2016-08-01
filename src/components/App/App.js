@@ -10,10 +10,8 @@ class App extends Component {
         {this.props.children}
         <Link to="counter">Counter</Link>
         <Link to="todos">Todos</Link>
-        {
-          !process.env.PRODUCTION
-          ? <DevTools />
-          : <div></div>
+        {process.env.NODE_ENV === 'PRODUCTION' &&
+          <DevTools />
         }
       </div>
     )
