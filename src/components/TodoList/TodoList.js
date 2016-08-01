@@ -5,7 +5,7 @@ import Todo from '../Todo'
 
 import {} from './TodoList.scss'
 
-const TodoList = ({ todos, isFetching }) => {
+const TodoList = ({ todos, isFetching, onTodoClick }) => {
   if (isFetching) {
     return (
       <Spinner text='Loading' />
@@ -15,7 +15,7 @@ const TodoList = ({ todos, isFetching }) => {
       <div className="todolist">
       {todos.map(todo => {
         return (
-          <Todo {...todo} key={todo.id} />
+          <Todo {...todo} key={todo.id} onClick={onTodoClick} />
         )
       })}
       </div>
@@ -25,7 +25,8 @@ const TodoList = ({ todos, isFetching }) => {
 
 TodoList.propTypes = {
   todos: PropTypes.array.isRequired,
-  isFetching: PropTypes.bool.isRequired
+  isFetching: PropTypes.bool.isRequired,
+  onTodoClick: PropTypes.func.isRequired
 }
 
 export default TodoList

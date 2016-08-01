@@ -1,22 +1,31 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchTodos } from '../../actions/todos'
+import { fetchTodos, completeTodo } from '../../actions/todos'
 
 import TodoList from '../../components/TodoList'
 
 import {} from './Todos.scss'
 
 class Todos extends Component {
+  constructor () {
+    super()
+    this.onTodoClick = this.onTodoClick.bind(this)
+  }
+
   componentDidMount () {
     this.props.dispatch(fetchTodos())
+  }
+
+  onTodoClick (id) {
+    this.props.dispatch(completeTodo(id))
   }
 
   render () {
     return (
       <div className="todos">
         <h1 className="todos__title">Todos</h1>
-        <TodoList todos={this.props.todos} isFetching={this.props.isFetching} />
+        <TodoList todos={this.props.todos} isFetching={this.props.isFetching} onTodoClick={this.onTodoClick} />
       </div>
     )
   }
