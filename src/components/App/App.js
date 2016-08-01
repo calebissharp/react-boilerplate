@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import { Link } from 'react-router'
 
 import DevTools from '../../containers/DevTools'
 
@@ -7,6 +8,8 @@ class App extends Component {
     return (
       <div>
         {this.props.children}
+        <Link to="counter">Counter</Link>
+        <Link to="todos">Todos</Link>
         {
           !process.env.PRODUCTION
           ? <DevTools />
