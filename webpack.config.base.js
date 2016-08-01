@@ -5,8 +5,8 @@ exports.config = {
     app: ['./src/index.js']
   },
   output: {
-    path: path.resolve(__dirname, 'public/assets'),
-    publicPath: 'assets/',
+    path: path.resolve(__dirname, 'dist/'),
+    publicPath: '/',
     filename: 'bundle.js'
   }
 }

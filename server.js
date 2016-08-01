@@ -2,10 +2,10 @@ const path = require('path')
 const express = require('express')
 const app = express()
 
-app.use(express.static('public'))
+app.use(express.static('dist'))
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.resolve('public/index.html'))
+  res.sendFile(path.resolve('dist/index.html'))
 })
 
 const PORT = process.env.port || 8080
