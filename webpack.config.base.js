@@ -24,5 +24,13 @@ exports.loaders = {
   cssLoader: {
     test: /\.css$/,
     loader: 'style!css'
+  },
+  assetLoader: {
+    test: /\.(woff|woff2|ttf|eot)$/,
+    loader: 'file'
+  },
+  imageLoader: {
+    test: /\.(jpe?g|png|gif|svg)$/i,
+    loader: 'file'
   }
 }
