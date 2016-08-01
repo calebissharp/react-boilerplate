@@ -1,16 +1,12 @@
-import React, { Component } from 'react'
+import React, { PropTypes, Component } from 'react'
 
-import Todos from '../../containers/Todos'
-
-import Counter from '../../containers/Counter'
 import DevTools from '../../containers/DevTools'
 
 class App extends Component {
   render () {
     return (
       <div>
-        <Counter />
-        <Todos />
+        {this.props.children}
         {
           !process.env.PRODUCTION
           ? <DevTools />
@@ -19,6 +15,10 @@ class App extends Component {
       </div>
     )
   }
+}
+
+App.propTypes = {
+  children: PropTypes.element.isRequired
 }
 
 export default App
