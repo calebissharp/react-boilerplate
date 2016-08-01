@@ -10,6 +10,7 @@ const prodConfig = Object.assign({}, config, {
       loaders.jsLoader,
       loaders.assetLoader,
       loaders.imageLoader,
+      loaders.handlebarsLoader,
       Object.assign({}, loaders.sassLoader, {
         loader: ExtractTextPlugin.extract(['css', 'sass'])
       })

@@ -32,5 +32,10 @@ exports.loaders = {
   imageLoader: {
     test: /\.(jpe?g|png|gif|svg)$/i,
     loader: 'file'
+  },
+  handlebarsLoader: {
+    test: /\.(handlebars|hbs)$/,
+    loader: 'handlebars'
   }
+
 }

@@ -11,6 +11,7 @@ const devConfig = Object.assign({}, config, {
       loaders.sassLoader,
       loaders.assetLoader,
       loaders.imageLoader,
+      loaders.handlebarsLoader,
       Object.assign({}, loaders.jsLoader, {
         loaders: ['react-hot', 'babel']
       })
