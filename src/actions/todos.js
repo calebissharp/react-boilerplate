@@ -5,6 +5,26 @@ export const COMPLETE_TODO = 'COMPLETE_TODO'
 export const REQUEST_TODOS = 'REQUEST_TODOS'
 export const RECEIVE_TODOS = 'RECEIVE_TODOS'
 
+const todos = {
+  todos: [
+    {
+      id: 1,
+      title: 'Go do stuff',
+      complete: false
+    },
+    {
+      id: 2,
+      title: 'Learn React',
+      complete: true
+    },
+    {
+      id: 3,
+      title: 'Learn Redux',
+      complete: true
+    }
+  ]
+}
+
 export const createTodo = (title) => ({
   type: CREATE_TODO,
   complete: false,
@@ -39,9 +59,7 @@ export const fetchTodos = () => {
   return dispatch => {
     dispatch(requestTodos())
     setTimeout(() => {
-      return fetch('http://localhost:8080/todos.json')
-      .then(res => res.json())
-      .then(json => dispatch(receiveTodos(json)))
+      dispatch(receiveTodos(todos))
     }, 1000)
   }
 }
