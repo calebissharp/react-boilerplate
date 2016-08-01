@@ -12,7 +12,7 @@
     "build": "webpack",
     "postinstall": "npm run build",
     "prod": "node server.js",
-    "prestart": "env=PRODUCTION npm run build",
+    "prestart": "node_env=PRODUCTION npm run build",
     "start": "npm run prod"
   },
   "repository": {
