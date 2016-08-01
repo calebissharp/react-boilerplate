@@ -8,7 +8,6 @@ import App from './components/App'
 import Counter from './containers/Counter'
 import Todos from './containers/Todos'
 
-import {} from 'file?name=[name].[ext]!./index.html'
 import {} from 'file?name=[name].[ext]!./favicon.ico'
 import {} from './app.scss'
 
