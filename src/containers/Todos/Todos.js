@@ -9,7 +9,7 @@ import {} from './Todos.scss'
 
 class Todos extends Component {
   componentDidMount () {
-    this.props.fetchTodos()
+    this.props.dispatch(fetchTodos())
   }
 
   render () {
@@ -25,7 +25,7 @@ class Todos extends Component {
 Todos.propTypes = {
   todos: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
-  fetchTodos: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -35,15 +35,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchTodos () {
-      dispatch(fetchTodos())
-    }
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Todos)
+export default connect(mapStateToProps)(Todos)
