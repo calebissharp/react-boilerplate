@@ -8,11 +8,11 @@
     "npm": "3.8.6"
   },
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline --content-base public/",
-    "build": "webpack",
+    "dev": "webpack-dev-server --hot --inline --content-base public/ --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.production.js",
     "postinstall": "npm run build",
     "prod": "node server.js",
-    "prestart": "node_env=PRODUCTION npm run build",
+    "prestart": "npm run build",
     "start": "npm run prod"
   },
   "repository": {

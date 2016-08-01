@@ -1,8 +1,6 @@
 var path = require('path')
-var webpack = require('webpack')
 
 module.exports = {
-  devtool: '#eval-source-map',
   entry: {
     app: ['./src/index.js']
   },
@@ -16,7 +14,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel']
+        loaders: ['babel']
       },
       {
         test: /\.css$/,
@@ -27,15 +25,5 @@ module.exports = {
         loaders: ['style', 'css', 'sass']
       }
     ]
-  },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-      }
-    })
-  ],
-  devServer: {
-    historyApiFallback: true
   }
 }
