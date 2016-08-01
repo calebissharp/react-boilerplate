@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchTodos, completeTodo } from '../../actions/todos'
+import { fetchTodos, completeTodo, removeCompletedTodos } from '../../actions/todos'
 
 import TodoList from '../../components/TodoList'
 
@@ -11,6 +11,7 @@ class Todos extends Component {
   constructor () {
     super()
     this.onTodoClick = this.onTodoClick.bind(this)
+    this.onRemoveTodosClick = this.onRemoveTodosClick.bind(this)
   }
 
   componentDidMount () {
@@ -21,11 +22,18 @@ class Todos extends Component {
     this.props.dispatch(completeTodo(id))
   }
 
+  onRemoveTodosClick (e) {
+    e.preventDefault()
+
+    this.props.dispatch(removeCompletedTodos())
+  }
+
   render () {
     return (
       <div className="todos">
         <h1 className="todos__title">Todos</h1>
         <TodoList todos={this.props.todos} isFetching={this.props.isFetching} onTodoClick={this.onTodoClick} />
+        <a onClick={this.onRemoveTodosClick} href="#">Remove Completed Todos</a>
       </div>
     )
   }
