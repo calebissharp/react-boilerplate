@@ -14,7 +14,7 @@ exports.config = {
 exports.loaders = {
   sassLoader: {
     test: /\.scss$/,
-    loaders: ['css', 'sass']
+    loaders: ['style', 'css', 'sass']
   },
   jsLoader: {
     test: /\.js$/,
