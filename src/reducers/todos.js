@@ -1,4 +1,6 @@
-import { REQUEST_TODOS, RECEIVE_TODOS } from '../actions/todos'
+import { REQUEST_TODOS, RECEIVE_TODOS, COMPLETE_TODO } from '../actions/todos'
+
+import todo from './todo'
 
 const todos = (state = {
   isFetching: false,
@@ -14,6 +16,10 @@ const todos = (state = {
         isFetching: false,
         items: action.todos,
         lastUpdated: action.receivedAt
+      })
+    case COMPLETE_TODO:
+      return Object.assign({}, state, {
+        items: state.items.map(t => todo(t, action))
       })
     default:
       return state
