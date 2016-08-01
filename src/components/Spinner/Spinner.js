@@ -1,10 +1,12 @@
 import React, { PropTypes, Component } from 'react'
 
+import spinnerImage from './spinner.gif'
+
 class Spinner extends Component {
   render () {
     return (
       <div>
-        <img src="img/spinner.gif" /> {this.props.text}
+        <img src={spinnerImage} /> {this.props.text}
       </div>
     )
   }
