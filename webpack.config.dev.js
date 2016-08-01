@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 const { config, loaders } = require('./webpack.config.base')
 
 const devConfig = Object.assign({}, config, {
@@ -16,7 +18,12 @@ const devConfig = Object.assign({}, config, {
         loaders: ['react-hot', 'babel']
       })
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.hbs'
+    })
+  ]
 })
 
 module.exports = devConfig
