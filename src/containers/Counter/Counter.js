@@ -6,21 +6,40 @@ import { incrementCounter, decrementCounter, incrementCounterAsync } from '../..
 import {} from './Counter.scss'
 
 class Counter extends Component {
+  constructor () {
+    super()
+    this.onIncrementCounter = this.onIncrementCounter.bind(this)
+    this.onDecrementCounter = this.onDecrementCounter.bind(this)
+    this.onIncrementCounterAsync = this.onIncrementCounterAsync.bind(this)
+  }
+
+  onIncrementCounter () {
+    this.props.dispatch(incrementCounter())
+  }
+
+  onDecrementCounter () {
+    this.props.dispatch(decrementCounter())
+  }
+
+  onIncrementCounterAsync () {
+    this.props.dispatch(incrementCounterAsync())
+  }
+
   render () {
     return (
       <div className="counter">
         <h2 className="counter__number">{this.props.counter}</h2>
-        <button onClick={this.props.onIncrementCounter}
+        <button onClick={this.onIncrementCounter}
           className="counter__button">
           +
         </button>
 
-        <button onClick={this.props.onDecrementCounter}
+        <button onClick={this.onDecrementCounter}
           className="counter__button">
           -
         </button>
 
-        <button onClick={this.props.onIncrementCounterAsync}
+        <button onClick={this.onIncrementCounterAsync}
           className="counter__button counter__button--async">
           async
         </button>
@@ -31,9 +50,7 @@ class Counter extends Component {
 
 Counter.propTypes = {
   counter: PropTypes.number.isRequired,
-  onIncrementCounter: PropTypes.func.isRequired,
-  onDecrementCounter: PropTypes.func.isRequired,
-  onIncrementCounterAsync: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -42,21 +59,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onIncrementCounter () {
-      dispatch(incrementCounter())
-    },
-    onDecrementCounter () {
-      dispatch(decrementCounter())
-    },
-    onIncrementCounterAsync () {
-      dispatch(incrementCounterAsync())
-    }
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Counter)
+export default connect(mapStateToProps)(Counter)
