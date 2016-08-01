@@ -3,6 +3,8 @@ import React, { PropTypes } from 'react'
 import Spinner from '../Spinner'
 import Todo from '../Todo'
 
+import {} from './TodoList.scss'
+
 const TodoList = ({ todos, isFetching }) => {
   if (isFetching) {
     return (
@@ -10,7 +12,7 @@ const TodoList = ({ todos, isFetching }) => {
     )
   } else {
     return (
-      <div>
+      <div className="todolist">
       {todos.map(todo => {
         return (
           <Todo {...todo} key={todo.id} />

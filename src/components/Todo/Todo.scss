@@ -1,0 +1,24 @@
+.todo {
+  height: 50px;
+}
+
+.todo:hover {
+  background: gray;
+}
+
+.todo:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+.todo__title {
+  margin: 0;
+  line-height: 50px;
+}
+
+.todo__title--complete {
+  text-decoration: line-through;
+}
+
+.todo--complete {
+  background: darken(#fff, 25%);;
+}

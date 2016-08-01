@@ -5,6 +5,8 @@ import { fetchTodos } from '../../actions/todos'
 
 import TodoList from '../../components/TodoList'
 
+import {} from './Todos.scss'
+
 class Todos extends Component {
   componentDidMount () {
     this.props.fetchTodos()
@@ -12,8 +14,8 @@ class Todos extends Component {
 
   render () {
     return (
-      <div>
-        <h1>Todos</h1>
+      <div className="todos">
+        <h1 className="todos__title">Todos</h1>
         <TodoList todos={this.props.todos} isFetching={this.props.isFetching} />
       </div>
     )
