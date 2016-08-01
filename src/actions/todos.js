@@ -1,5 +1,6 @@
 export const CREATE_TODO = 'CREATE_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
+export const REMOVE_COMPLETED_TODOS = 'REMOVE_COMPLETED_TODOS'
 export const COMPLETE_TODO = 'COMPLETE_TODO'
 export const REQUEST_TODOS = 'REQUEST_TODOS'
 export const RECEIVE_TODOS = 'RECEIVE_TODOS'
@@ -13,6 +14,10 @@ export const createTodo = (title) => ({
 export const removeTodo = (id) => ({
   type: REMOVE_TODO,
   id
+})
+
+export const removeCompletedTodos = () => ({
+  type: REMOVE_COMPLETED_TODOS
 })
 
 export const completeTodo = (id) => ({
