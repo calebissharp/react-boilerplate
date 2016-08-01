@@ -1,10 +1,14 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes, Component } from 'react'
 
-const Spinner = ({ text }) => (
-  <div>
-    <img src="img/spinner.gif" /> {text}
-  </div>
-)
+class Spinner extends Component {
+  render () {
+    return (
+      <div>
+        <img src="img/spinner.gif" /> {this.props.text}
+      </div>
+    )
+  }
+}
 
 Spinner.propTypes = {
   text: PropTypes.string

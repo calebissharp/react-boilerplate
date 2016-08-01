@@ -1,25 +1,27 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes, Component } from 'react'
 
 import Spinner from '../Spinner'
 import Todo from '../Todo'
 
 import {} from './TodoList.scss'
 
-const TodoList = ({ todos, isFetching, onTodoClick }) => {
-  if (isFetching) {
-    return (
-      <Spinner text='Loading' />
-    )
-  } else {
-    return (
-      <div className="todolist">
-      {todos.map(todo => {
-        return (
-          <Todo {...todo} key={todo.id} onClick={onTodoClick} />
-        )
-      })}
-      </div>
-    )
+class TodoList extends Component {
+  render () {
+    if (this.props.isFetching) {
+      return (
+        <Spinner text='Loading' />
+      )
+    } else {
+      return (
+        <div className="todolist">
+        {this.props.todos.map(todo => {
+          return (
+            <Todo {...todo} key={todo.id} onClick={this.props.onTodoClick} />
+          )
+        })}
+        </div>
+      )
+    }
   }
 }
 
