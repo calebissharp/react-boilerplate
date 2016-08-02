@@ -63,3 +63,11 @@ export const fetchTodos = () => {
     }, 1000)
   }
 }
+
+export const fetchTodosIfNeeded = () => {
+  return (dispatch, getState) => {
+    if (!getState().todos.didFetch && !getState().todos.isFetching) {
+      dispatch(fetchTodos())
+    }
+  }
+}

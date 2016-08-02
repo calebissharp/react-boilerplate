@@ -4,6 +4,7 @@ import todo from './todo'
 
 const todos = (state = {
   isFetching: false,
+  didFetch: false,
   items: []
 }, action) => {
   switch (action.type) {
@@ -14,6 +15,7 @@ const todos = (state = {
     case RECEIVE_TODOS:
       return Object.assign({}, state, {
         isFetching: false,
+        didFetch: true,
         items: action.todos,
         lastUpdated: action.receivedAt
       })
