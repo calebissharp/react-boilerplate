@@ -1,3 +1,5 @@
+let todoIds = 0
+
 export const CREATE_TODO = 'CREATE_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
 export const REMOVE_COMPLETED_TODOS = 'REMOVE_COMPLETED_TODOS'
@@ -8,17 +10,17 @@ export const RECEIVE_TODOS = 'RECEIVE_TODOS'
 const todos = {
   todos: [
     {
-      id: 1,
+      id: todoIds++,
       title: 'Go do stuff',
       complete: false
     },
     {
-      id: 2,
+      id: todoIds++,
       title: 'Learn React',
       complete: true
     },
     {
-      id: 3,
+      id: todoIds++,
       title: 'Learn Redux',
       complete: true
     }
@@ -28,6 +30,7 @@ const todos = {
 export const createTodo = (title) => ({
   type: CREATE_TODO,
   complete: false,
+  id: todoIds++,
   title
 })
 
