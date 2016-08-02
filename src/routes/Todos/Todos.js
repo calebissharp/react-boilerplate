@@ -33,7 +33,13 @@ class Todos extends Component {
       <div className="todos">
         <h1 className="todos__title">Todos</h1>
         <TodoList todos={this.props.todos} isFetching={this.props.isFetching} onTodoClick={this.onTodoClick} />
-        <a onClick={this.onRemoveTodosClick} href="#">Remove Completed Todos</a>
+        {this.props.todos.length > 0 && !this.props.isFetching &&
+          <a onClick={this.onRemoveTodosClick} href="#">Remove Completed Todos</a>
+        }
+
+        {this.props.todos.length < 1 && !this.props.isFetching &&
+          <p className="text-muted">No more todos</p>
+        }
       </div>
     )
   }
