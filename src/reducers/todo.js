@@ -1,7 +1,13 @@
-import { COMPLETE_TODO, REMOVE_COMPLETED_TODOS } from '../actions/todos'
+import { CREATE_TODO, COMPLETE_TODO, REMOVE_COMPLETED_TODOS } from '../actions/todos'
 
 const todo = (state, action) => {
   switch (action.type) {
+    case CREATE_TODO:
+      return {
+        complete: action.complete,
+        id: action.id,
+        title: action.title
+      }
     case COMPLETE_TODO:
       if (action.id === state.id) {
         return Object.assign({}, state, {
