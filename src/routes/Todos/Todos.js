@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchTodos, completeTodo, removeCompletedTodos } from '../../actions/todos'
+import { fetchTodosIfNeeded, completeTodo, removeCompletedTodos } from '../../actions/todos'
 
 import TodoList from '../../components/TodoList'
 
@@ -15,7 +15,7 @@ class Todos extends Component {
   }
 
   componentDidMount () {
-    this.props.dispatch(fetchTodos())
+    this.props.dispatch(fetchTodosIfNeeded())
   }
 
   onTodoClick (id) {
