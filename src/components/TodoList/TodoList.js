@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import { ListGroup } from 'react-bootstrap'
 
 import Spinner from '../Spinner'
 import Todo from '../Todo'
@@ -13,13 +14,13 @@ class TodoList extends Component {
       )
     } else {
       return (
-        <div className="todolist">
+        <ListGroup>
         {this.props.todos.map(todo => {
           return (
             <Todo {...todo} key={todo.id} onClick={this.props.onTodoClick} />
           )
         })}
-        </div>
+        </ListGroup>
       )
     }
   }

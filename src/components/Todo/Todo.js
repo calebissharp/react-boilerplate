@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import { ListGroupItem } from 'react-bootstrap'
 
 import {} from './Todo.scss'
 
@@ -14,11 +15,11 @@ class Todo extends Component {
 
   render () {
     return (
-      <div className={this.props.complete ? 'todo todo--complete' : 'todo'} onClick={this.onClick}>
-        <h3 className={this.props.complete ? 'todo__title todo__title--complete' : 'todo__title'}>
+      <ListGroupItem onClick={this.onClick}>
+        <span className={this.props.complete ? 'text-danger' : ''}>
           {this.props.title}
-        </h3>
-      </div>
+        </span>
+      </ListGroupItem>
     )
   }
 }
