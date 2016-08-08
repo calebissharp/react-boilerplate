@@ -10,7 +10,7 @@ class TodoList extends Component {
   render () {
     if (this.props.isFetching) {
       return (
-        <Spinner text='Loading' />
+        <Spinner text="Loading" />
       )
     } else {
       return (
