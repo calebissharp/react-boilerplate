@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --hot --inline --content-base dist/ --config config/webpack.config.dev.js",
-    "build": "webpack --config config/webpack.config.production.js",
+    "build": "npm run lint && webpack --config config/webpack.config.production.js",
     "postinstall": "npm run build",
     "prod": "node server.js",
     "prestart": "npm run build",
