@@ -1,5 +1,6 @@
 let todoIds = 0
 
+export const ADD_TODO = 'ADD_TODO'
 export const CREATE_TODO = 'CREATE_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
 export const REMOVE_COMPLETED_TODOS = 'REMOVE_COMPLETED_TODOS'
@@ -27,8 +28,8 @@ const todos = {
   ]
 }
 
-export const createTodo = (title) => ({
-  type: CREATE_TODO,
+export const addTodo = (title) => ({
+  type: ADD_TODO,
   complete: false,
   id: todoIds++,
   title

@@ -1,8 +1,8 @@
-import { CREATE_TODO, COMPLETE_TODO, REMOVE_COMPLETED_TODOS } from '../actions/todos'
+import { ADD_TODO, COMPLETE_TODO, REMOVE_COMPLETED_TODOS } from '../actions/todos'
 
 const todo = (state, action) => {
   switch (action.type) {
-    case CREATE_TODO:
+    case ADD_TODO:
       return {
         complete: action.complete,
         id: action.id,

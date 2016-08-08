@@ -1,4 +1,4 @@
-import { REQUEST_TODOS, RECEIVE_TODOS, CREATE_TODO, COMPLETE_TODO, REMOVE_COMPLETED_TODOS } from '../actions/todos'
+import { REQUEST_TODOS, RECEIVE_TODOS, ADD_TODO, COMPLETE_TODO, REMOVE_COMPLETED_TODOS } from '../actions/todos'
 
 import todo from './todo'
 
@@ -19,7 +19,7 @@ const todos = (state = {
         items: action.todos,
         lastUpdated: action.receivedAt
       })
-    case CREATE_TODO:
+    case ADD_TODO:
       return Object.assign({}, state, {
         items: [
           ...state.items,
