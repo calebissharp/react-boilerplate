@@ -30,7 +30,7 @@ class App extends Component {
 
         {this.props.children}
 
-        {process.env.NODE_ENV !== 'PRODUCTION' &&
+        {process.env.NODE_ENV !== 'production' &&
           <DevTools />
         }
       </div>
