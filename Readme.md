@@ -1,7 +1,9 @@
 # react-boilerplate
-[![Build Status](https://travis-ci.org/epicsharp/react-boilerplate.svg?branch=master)](https://travis-ci.org/epicsharp/react-boilerplate)
+[![Build Status](https://travis-ci.org/epicsharp/react-boilerplate.svg?branch=master)](https://travis-ci.org/epicsharp/react-boilerplate) [![dependencies Status](https://david-dm.org/epicsharp/react-boilerplate/status.svg)](https://david-dm.org/epicsharp/react-boilerplate) [![devDependencies Status](https://david-dm.org/epicsharp/react-boilerplate/dev-status.svg)](https://david-dm.org/epicsharp/react-boilerplate?type=dev)
 
 A boilerplate for React to get you up and running as quickly as possible.
+
+Requires Node.js 6
 
 ## Getting Started
 Follow these instructions to get it running on your local machine.
