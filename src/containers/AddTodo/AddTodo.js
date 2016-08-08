@@ -12,7 +12,6 @@ class AddTodo extends Component {
   }
 
   onKeyUp (e) {
-    console.log(e.keyCode)
     if (e.keyCode === 13) {
       this.props.dispatch(addTodo(e.target.value))
       e.target.value = ''
