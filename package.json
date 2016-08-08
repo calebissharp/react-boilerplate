@@ -1,6 +1,6 @@
 {
   "name": "react-boilerplate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A boilerplate for react to get you up and running as quickly as possible.",
   "main": "index.js",
   "engines": {
