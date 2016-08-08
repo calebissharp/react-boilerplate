@@ -13,7 +13,8 @@
     "postinstall": "npm run build",
     "prod": "node server.js",
     "prestart": "npm run build",
-    "start": "npm run prod"
+    "start": "npm run prod",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
