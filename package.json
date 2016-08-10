@@ -15,6 +15,18 @@
     "start": "npm run prod",
     "lint": "eslint ."
   },
+  "jest": {
+    "moduleDirectories": ["node_modules", "src"],
+    "unmockedModulePathPatterns": [
+      "node_modules/react/",
+      "node_modules/enzyme/",
+      "node_modules/core-js/"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "<rootDir>/test/styleMock.js",
+      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/test/fileMock.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/epicsharp/react-boilerplate.git"
