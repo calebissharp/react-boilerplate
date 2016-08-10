@@ -8,7 +8,7 @@ class Spinner extends Component {
   render () {
     return (
       <div className="spinner">
-        <img src={spinnerImage} /> {this.props.text}
+        <img src={spinnerImage} className="spinner__image" /> {this.props.text}
       </div>
     )
   }
