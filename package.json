@@ -13,7 +13,9 @@
     "prod": "node server.js",
     "prestart": "npm run build",
     "start": "npm run prod",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "jest",
+    "test:w": "npm run test -- --watch"
   },
   "jest": {
     "moduleDirectories": ["node_modules", "src"],
