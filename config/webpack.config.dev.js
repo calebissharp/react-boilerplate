@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const { config, loaders } = require('./webpack.config.base')
+const { config } = require('./webpack.config.base')
 
 const devConfig = Object.assign({}, config, {
   devtool: '#eval-source-map',
@@ -9,14 +9,16 @@ const devConfig = Object.assign({}, config, {
   },
   module: {
     loaders: [
-      loaders.cssLoader,
-      loaders.sassLoader,
-      loaders.assetLoader,
-      loaders.imageLoader,
-      loaders.handlebarsLoader,
-      Object.assign({}, loaders.jsLoader, {
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
         loaders: ['react-hot', 'babel']
-      })
+      },
+      ...config.module.loaders
     ]
   },
   plugins: [

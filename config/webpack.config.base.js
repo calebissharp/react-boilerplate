@@ -8,34 +8,30 @@ exports.config = {
     path: path.resolve(__dirname, '../dist/'),
     publicPath: '/',
     filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loaders: ['babel']
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css'
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot)$/,
+        loader: 'file'
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file'
+      },
+      {
+        test: /\.(handlebars|hbs)$/,
+        loader: 'handlebars'
+      }
+    ]
   }
-}
-
-exports.loaders = {
-  sassLoader: {
-    test: /\.scss$/,
-    loaders: ['style', 'css', 'sass']
-  },
-  jsLoader: {
-    test: /\.js$/,
-    exclude: /node_modules/,
-    loaders: ['babel']
-  },
-  cssLoader: {
-    test: /\.css$/,
-    loader: 'style!css'
-  },
-  assetLoader: {
-    test: /\.(woff|woff2|ttf|eot)$/,
-    loader: 'file'
-  },
-  imageLoader: {
-    test: /\.(jpe?g|png|gif|svg)$/i,
-    loader: 'file'
-  },
-  handlebarsLoader: {
-    test: /\.(handlebars|hbs)$/,
-    loader: 'handlebars'
-  }
-
 }
