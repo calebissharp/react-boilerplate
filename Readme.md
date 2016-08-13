@@ -22,6 +22,12 @@ npm run dev
 
 You're all set!
 
+## Barebones
+For a more minimal boilerplate, use the barebones branch. It has the same structure, with all the examples removed.
+```bash
+git checkout barebones
+```
+
 ## License
 
 The MIT License (MIT)
