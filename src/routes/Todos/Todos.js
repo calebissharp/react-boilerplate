@@ -8,7 +8,7 @@ import AddTodo from '../../containers/AddTodo'
 
 import {} from './Todos.scss'
 
-class Todos extends Component {
+export class TodosComponent extends Component {
   constructor () {
     super()
     this.onTodoClick = this.onTodoClick.bind(this)
@@ -47,7 +47,7 @@ class Todos extends Component {
   }
 }
 
-Todos.propTypes = {
+TodosComponent.propTypes = {
   todos: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired
@@ -60,4 +60,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Todos)
+export default connect(mapStateToProps)(TodosComponent)
