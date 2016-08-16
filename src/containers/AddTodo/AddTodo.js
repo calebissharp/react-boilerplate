@@ -2,6 +2,8 @@ import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 import { InputGroup, FormGroup, FormControl } from 'react-bootstrap'
 
+import { addTodo } from '../../actions/todos'
+
 export class AddTodoComponent extends Component {
   constructor () {
     super()
@@ -11,7 +13,7 @@ export class AddTodoComponent extends Component {
 
   onKeyUp (e) {
     if (e.keyCode === 13) {
-      this.props.dispatch(this.props.addTodo(e.target.value))
+      this.props.dispatch(addTodo(e.target.value))
       e.target.value = ''
     }
   }
@@ -29,8 +31,7 @@ export class AddTodoComponent extends Component {
 }
 
 AddTodoComponent.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  addTodo: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired
 }
 
 export default connect()(AddTodoComponent)
