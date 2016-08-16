@@ -24,7 +24,7 @@ describe('<TodosComponent />', () => {
   })
 
   it('renders an AddTodo', () => {
-    expect(wrapper.find('AddTodo').length).toEqual(1)
+    expect(wrapper.find('Connect(AddTodoComponent)').length).toEqual(1)
   })
 
   it('renders a TodoList', () => {
