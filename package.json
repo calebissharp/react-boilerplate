@@ -23,9 +23,14 @@
       "node_modules"
     ],
     "moduleNameMapper": {
-      "^.+\\.(css|scss)$": "<rootDir>/test/styleMock.js",
-      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/test/fileMock.js"
-    }
+      "^.+\\.(css|scss)$": "<rootDir>/__tests__/styleMock.js",
+      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/__tests__/fileMock.js"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/__tests__/styleMock.js",
+      "<rootDir>/__tests__/fileMock.js"
+    ]
   },
   "repository": {
     "type": "git",
