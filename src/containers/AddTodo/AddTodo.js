@@ -4,7 +4,7 @@ import { InputGroup, FormGroup, FormControl } from 'react-bootstrap'
 
 import { addTodo } from '../../actions/todos'
 
-class AddTodo extends Component {
+export class AddTodoComponent extends Component {
   constructor () {
     super()
 
@@ -30,8 +30,8 @@ class AddTodo extends Component {
   }
 }
 
-AddTodo.propTypes = {
+AddTodoComponent.propTypes = {
   dispatch: PropTypes.func.isRequired
 }
 
-export default connect()(AddTodo)
+export default connect()(AddTodoComponent)

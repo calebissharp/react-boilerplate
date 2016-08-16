@@ -1,14 +1,14 @@
 import React, { PropTypes, Component } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchTodosIfNeeded, completeTodo, removeCompletedTodos } from '../../actions/todos'
+import { fetchTodosIfNeeded, completeTodo, removeCompletedTodos, addTodo } from '../../actions/todos'
 
 import TodoList from '../../components/TodoList'
 import AddTodo from '../../containers/AddTodo'
 
 import {} from './Todos.scss'
 
-class Todos extends Component {
+export class TodosComponent extends Component {
   constructor () {
     super()
     this.onTodoClick = this.onTodoClick.bind(this)
@@ -33,7 +33,7 @@ class Todos extends Component {
     return (
       <div className="todos">
         <h1 className="todos__title">Todos</h1>
-        <AddTodo />
+        <AddTodo addTodo={addTodo} />
         <TodoList todos={this.props.todos} isFetching={this.props.isFetching} onTodoClick={this.onTodoClick} />
         {this.props.todos.length > 0 && !this.props.isFetching &&
           <a onClick={this.onRemoveTodosClick} href="#">Remove Completed Todos</a>
@@ -47,7 +47,7 @@ class Todos extends Component {
   }
 }
 
-Todos.propTypes = {
+TodosComponent.propTypes = {
   todos: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired
@@ -60,4 +60,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Todos)
+export default connect(mapStateToProps)(TodosComponent)

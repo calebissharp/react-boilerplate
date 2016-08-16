@@ -5,7 +5,7 @@ import { incrementCounter, decrementCounter, incrementCounterAsync } from '../..
 
 import {} from './Counter.scss'
 
-class Counter extends Component {
+export class CounterComponent extends Component {
   constructor () {
     super()
     this.onIncrementCounter = this.onIncrementCounter.bind(this)
@@ -48,7 +48,7 @@ class Counter extends Component {
   }
 }
 
-Counter.propTypes = {
+CounterComponent.propTypes = {
   counter: PropTypes.number.isRequired,
   dispatch: PropTypes.func.isRequired
 }
@@ -59,4 +59,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Counter)
+export default connect(mapStateToProps)(CounterComponent)
