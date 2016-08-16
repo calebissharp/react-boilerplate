@@ -23,4 +23,11 @@ describe('Counter Actions', () => {
       type: 'DECREMENT_COUNTER'
     })
   })
+
+  it('exports async action creators', () => {
+    const dispatch = jest.fn()
+    incrementCounterAsync()(dispatch)
+    window.setTimeout.mock.calls[0][0]()
+    expect(dispatch.mock.calls[0][0]).toEqual({type: 'INCREMENT_COUNTER'})
+  })
 })
